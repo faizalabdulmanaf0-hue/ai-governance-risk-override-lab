@@ -15,4 +15,11 @@ def calculate_governance_risk(system):
         # Tambahkan 20 poin risiko
         risk_score += 20
 
+    # Rule 3 — Bias detected
+    # Aturan 3 — Bias terdeteksi pada sistem AI
+    if system["bias_detected"] == True:
+        # Add 20 risk points
+        # Tambahkan 20 poin risiko
+        risk_score += 20
+
     return risk_score
