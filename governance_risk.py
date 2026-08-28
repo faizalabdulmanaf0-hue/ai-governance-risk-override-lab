@@ -30,3 +30,10 @@ def calculate_governance_risk(system):
         risk_score += 25
 
     return risk_score
+
+    # Rule 5 — High-impact decision
+    # Aturan 5 — Sistem mengambil keputusan yang berdampak tinggi
+    if system["high_impact_decision"] == True:
+        # Add 15 risk points
+        # Tambahkan 15 poin risiko
+        risk_score += 15
