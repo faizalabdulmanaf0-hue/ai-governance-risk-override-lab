@@ -35,3 +35,15 @@ def classify_governance_risk(risk_score):
         return "MEDIUM"
     else:
         return "LOW"
+
+def assess_governance(system):
+    # Calculate the governance risk score
+    risk_score = calculate_governance_risk(system)
+
+    # Classify the risk level
+    risk_level = classify_governance_risk(risk_score)
+
+    return {
+        "risk_score": risk_score,
+        "risk_level": risk_level
+    }
