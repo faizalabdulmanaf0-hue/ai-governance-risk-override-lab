@@ -22,4 +22,11 @@ def calculate_governance_risk(system):
         # Tambahkan 20 poin risiko
         risk_score += 20
 
+    # Rule 4 — No human oversight
+    # Aturan 4 — Tidak ada pengawasan manusia
+    if system["human_oversight"] == False:
+        # Add 25 risk points
+        # Tambahkan 25 poin risiko
+        risk_score += 25
+
     return risk_score
