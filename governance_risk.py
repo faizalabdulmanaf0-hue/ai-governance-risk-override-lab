@@ -13,17 +13,6 @@ def calculate_governance_risk(system):
     if system["bias_detected"] is True:
         risk_score += 20
 
-def detect_critical_condition(system):
-    # Detect a critical governance condition
-    if (
-        system["sensitive_data"] is True
-        and system["human_oversight"] is False
-        and system["high_impact_decision"] is True
-    ):
-        return True
-
-    return False
-
     # Rule 4 — No human oversight
     if system["human_oversight"] is False:
         risk_score += 25
@@ -36,6 +25,18 @@ def detect_critical_condition(system):
     return min(risk_score, 100)
 
 
+def detect_critical_condition(system):
+    # Detect a critical governance condition
+    if (
+        system["sensitive_data"] is True
+        and system["human_oversight"] is False
+        and system["high_impact_decision"] is True
+    ):
+        return True
+
+    return False
+
+
 def classify_governance_risk(risk_score):
     # Classify the risk score
     if risk_score >= 80:
@@ -46,6 +47,7 @@ def classify_governance_risk(risk_score):
         return "MEDIUM"
     else:
         return "LOW"
+
 
 def assess_governance(system):
     # Calculate the governance risk score
